@@ -1,0 +1,10 @@
+services:
+  - type: web
+    name: lpnu-schedule
+    runtime: python
+    plan: free
+    buildCommand: "pip install -r requirements.txt"
+    startCommand: "gunicorn app:app"  # або main:app, залежно від назви
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.10
